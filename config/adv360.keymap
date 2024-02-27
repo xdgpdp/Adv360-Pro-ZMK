@@ -19,6 +19,21 @@
 #include <dt-bindings/zmk/backlight.h>
 
 / {
+    behaviors {
+#include "macros.dtsi"
+#include "version.dtsi"
+
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <175>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+      };
+
     combos {
         compatible = "zmk,combos";
         combo_qmark {
@@ -37,23 +52,6 @@
             bindings = <&kp GT>;
         };
     };
-};
-
-/ {
-  behaviors {
-    #include "macros.dtsi"
-    #include "version.dtsi"
-
-    hm: homerow_mods {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HOMEROW_MODS";
-        #binding-cells = <2>;
-        tapping-term-ms = <200>;
-        quick_tap_ms = <175>;
-        flavor = "tap-preferred";
-        bindings = <&kp>, <&kp>;
-    };
-  };
 
     keymap {
         compatible = "zmk,keymap";
