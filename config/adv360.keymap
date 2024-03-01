@@ -34,25 +34,6 @@
         };
       };
 
-    combos {
-        compatible = "zmk,combos";
-        combo_qmark {
-            timeout-ms = <50>;
-            key-positions = <46  56>;
-            bindings = <&kp QMARK>;
-        };
-        combo_angle_left {
-            timeout-ms = <50>;
-            key-positions = <46  57>;
-            bindings = <&kp LT>;
-        };
-        combo_angle_right {
-            timeout-ms = <50>;
-            key-positions = <46  58>;
-            bindings = <&kp GT>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
